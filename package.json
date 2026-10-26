@@ -1,0 +1,15 @@
+{
+  "name": "insight",
+  "private": true,
+  "description": "Insight — document intelligence workspace (server + client)",
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c blue,magenta \"npm run dev --prefix server\" \"npm run dev --prefix askpdf\"",
+    "start": "concurrently -k -n server,client -c blue,magenta \"npm start --prefix server\" \"npm run preview --prefix askpdf\"",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix askpdf",
+    "build": "npm run build --prefix askpdf",
+    "lint": "npm run lint --prefix askpdf"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
