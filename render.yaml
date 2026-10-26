@@ -11,7 +11,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: VECTOR_STORE
-        value: qdrant
+        value: mongodb
       - key: QDRANT_COLLECTION
         value: askpdf_chunks
       - key: EMBED_DIM
