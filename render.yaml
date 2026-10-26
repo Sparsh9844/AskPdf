@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: askpdf-server
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: VECTOR_STORE
+        value: qdrant
+      - key: QDRANT_COLLECTION
+        value: askpdf_chunks
+      - key: EMBED_DIM
+        value: "384"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGO_URI
+        sync: false
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
